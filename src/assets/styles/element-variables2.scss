@@ -1,0 +1,204 @@
+/**
+* I think element-ui's default theme color is too light for long-term use.
+* So I modified the default color and you can modify it to your liking.
+**/
+
+/* theme color */
+$--color-primary: #016df8;
+$--color-success: #2ee2ac;
+$--color-warning: #fea03a;
+$--color-danger: #ff631d;
+$--color-info: #999999;
+
+$--button-font-weight: 400;
+
+// $--color-text-regular: #1f2d3d;
+
+$--border-color-light: #dfe4ed;
+$--border-color-lighter: #e6ebf5;
+
+$--table-border: 1px solid#dfe6ec;
+
+/* icon font path, required */
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+    theme: $--color-primary;
+}
+
+// 设计稿修改全局样式
+//notification 修正标题高度偏差
+.el-notification__title {
+    margin-top: 3px;
+}
+// table
+.el-table {
+    color: #666;
+}
+.el-table thead {
+    color: #999;
+}
+// submenu 左边栏
+.el-submenu__title i {
+    color: #999;
+}
+.el-menu .nest-menu .el-menu-item {
+    color: #666 !important;
+}
+.el-menu .nest-menu .el-menu-item.is-active {
+    color: $--color-primary !important;
+}
+// form
+.el-form-item__label {
+    color: #333;
+    font-weight: 400;
+    // min-width: 110px;
+}
+.el-form-item--small .el-form-item__content {
+    line-height: 29px;
+}
+.el-form-item--small .el-form-item__label {
+    line-height: 30px;
+}
+// input
+.el-input__inner {
+    color: #666;
+}
+.el-input--small .el-input__inner {
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+}
+.el-input--small {
+    width: 140px;
+}
+.long-input {
+    width: 240px;
+}
+// 计数器
+.el-input-number--small {
+    width: 140px;
+}
+.el-input-number--small .el-input-number__decrease,
+.el-input-number--small .el-input-number__increase {
+    height: 28px;
+}
+// select
+.long-select .el-input {
+    width: 240px;
+}
+// button
+.el-button {
+    border-radius: 2px;
+}
+
+.el-button--small {
+    min-width: 80px;
+    height: 30px;
+    // padding: 8px 15px;
+}
+.el-button--medium {
+    font-size: 12px;
+    min-width: 200px;
+    height: 30px;
+    padding: 8px 15px;
+}
+.el-button--info {
+    background-color: #fff;
+    color: $--color-primary;
+    border-color: $--color-primary;
+}
+.el-button--info:hover,
+.el-button--info:focus {
+    color: #409eff;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+}
+.el-button--text:hover {
+}
+.long-button {
+    width: 200px;
+}
+// button text color
+.btn-primary,
+.btn-primary.el-button--text:focus {
+    color: $--color-primary;
+}
+.btn-success,
+.btn-success.el-button--text:focus {
+    color: $--color-success;
+}
+.btn-warning,
+.btn-warning.el-button--text:focus {
+    color: $--color-warning;
+}
+.btn-danger,
+.btn-danger.el-button--text:focus {
+    color: $--color-danger;
+}
+.el-button--text {
+    font-size: 14px;
+}
+// .el-button--small {
+//     min-width: 200px;
+//     height: 30px;
+// }
+// switch
+.el-switch {
+    min-width: 140px;
+    height: 30px;
+    line-height: 18px;
+}
+.el-switch__label {
+    color: #dcdfe6;
+}
+.el-switch__core {
+    width: 60px !important;
+    height: 30px;
+    border-radius: 15px;
+    border-color: $--color-warning;
+    background: $--color-warning;
+}
+.el-switch__core:after {
+    width: 26px;
+    height: 26px;
+}
+.el-switch.is-checked .el-switch__core::after {
+    margin-left: -27px;
+}
+.el-switch.is-checked .el-switch__core {
+    border-color: $--color-primary;
+    background-color: $--color-primary;
+}
+.el-switch__label--left.is-active {
+    color: $--color-warning;
+}
+// .el-switch__label--right.is-active {
+//     color: $--color-warning;
+// }
+
+// pagination
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .btn-next {
+    background-color: #f2f6fc;
+}
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .el-pager li {
+    background-color: #ebeef5;
+}
+// el-divider 分割线
+.el-divider {
+    background-color: #e9f5fe;
+    height: 2px;
+}
+
+// upload
+.el-upload__tip {
+    color: #999;
+    line-height: 18px;
+}
